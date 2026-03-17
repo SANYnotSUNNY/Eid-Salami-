@@ -1,179 +1,252 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Eid Salami 🎉</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Funny Eid Salami 💸</title>
 <style>
-body{
-  background: linear-gradient(#020024,#090979,#000);
-  font-family: Arial;
-  text-align: center;
-  color: white;
-  padding: 20px;
-  overflow-x: hidden;
-}
+  body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #0b0c2a, #1c1c4f);
+    color: #fff;
+    text-align: center;
+    overflow-x: hidden;
+    padding: 20px;
+  }
 
-/* Crescent Moon */
-.moon{
-  width: 120px;
-  height: 120px;
-  background: #fff9c4;
-  border-radius: 50%;
-  position: relative;
-  margin: auto;
-  box-shadow: 0 0 40px #fff176;
-  animation: floatMoon 4s ease-in-out infinite;
-}
+  h1 {
+    font-size: 3em;
+    margin-bottom: 0;
+    text-shadow: 0 0 10px #ffd700, 0 0 20px #ff8c00, 0 0 30px #ff4500;
+    animation: glow 2s infinite alternate;
+  }
 
-.moon:after{
-  content: "";
-  width: 120px;
-  height: 120px;
-  background: #020024;
-  border-radius: 50%;
-  position: absolute;
-  left: 35px;
-  top: -10px;
-}
+  @keyframes glow {
+    from { text-shadow: 0 0 10px #ffd700,0 0 20px #ff8c00,0 0 30px #ff4500; }
+    to   { text-shadow: 0 0 20px #ffff00,0 0 30px #ffa500,0 0 40px #ff6347; }
+  }
 
-@keyframes floatMoon{
-  0%{transform: translateY(0px);}
-  50%{transform: translateY(-15px);}
-  100%{transform: translateY(0px);}
-}
+  p.subtitle {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+  }
 
-/* Eid Mubarak */
-.eid{
-  font-size: 40px;
-  margin-top: 20px;
-  animation: glow 2s infinite alternate;
-}
+  .card {
+    background: #fff;
+    color: #000;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    max-width: 400px;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+    position: relative;
+  }
 
-@keyframes glow{
-  from{ color: #fff; }
-  to{ color: #ffd700; text-shadow: 0 0 20px gold; }
-}
+  .method-name {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
 
-/* Cards */
-.card{
-  background: white;
-  color: black;
-  margin: 15px auto;
-  padding: 15px;
-  border-radius: 12px;
-  width: 220px;
-  font-size: 18px;
-  font-weight: bold;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
-}
+  button {
+    background: red;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+  }
 
-.card img{
-  width: 60px;
-  margin-bottom: 8px;
-}
+  #moon {
+    position: fixed;
+    top: 50px;
+    left: -100px;
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle at 30% 30%, #fff, transparent 70%);
+    border-radius: 50%;
+    animation: moveMoon 20s linear infinite;
+    z-index: 1;
+  }
 
-.number{
-  margin: 8px 0;
-  font-weight: bold;
-}
+  @keyframes moveMoon {
+    0% { left: -100px; top: 50px; transform: rotate(0deg); }
+    50% { left: 50%; top: 100px; transform: rotate(180deg); }
+    100% { left: 100%; top: 50px; transform: rotate(360deg); }
+  }
 
-button{
-  padding: 6px 12px;
-  border: none;
-  background: #ff4444;
-  color: white;
-  border-radius: 6px;
-  cursor: pointer;
-}
+  /* Male dancer */
+  #dancer {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 3em;
+    animation: dance 1s infinite alternate;
+  }
 
-button:hover{
-  background: #cc0000;
-}
+  @keyframes dance {
+    0% { transform: rotate(0deg) translateY(0); }
+    50% { transform: rotate(20deg) translateY(-10px); }
+    100% { transform: rotate(-20deg) translateY(0); }
+  }
 
-.qr{
-  width: 100px;
-  margin-top: 8px;
-}
+  /* Coins/cash animation */
+  .coin {
+    position: fixed;
+    font-size: 24px;
+    pointer-events: none;
+    z-index: 9999;
+    animation: fall 1s linear forwards;
+  }
 
-.footer{
-  margin-top: 30px;
-  font-size: 14px;
-  color: #ccc;
-}
+  @keyframes fall {
+    0% { transform: translateY(0) rotate(0deg); opacity:1; }
+    100% { transform: translateY(300px) rotate(360deg); opacity:0; }
+  }
+
+  #fireworks {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9998;
+  }
+
+  .sparkle {
+    position: fixed;
+    width: 5px;
+    height: 5px;
+    background: yellow;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: sparkleAnim 2s linear infinite;
+  }
+
+  @keyframes sparkleAnim {
+    0% { transform: translateY(0) scale(1); opacity:1; }
+    50% { transform: translateY(-50px) scale(1.5); opacity:0.5; }
+    100% { transform: translateY(0) scale(1); opacity:1; }
+  }
 </style>
-
 </head>
 <body>
 
-<div class="moon"></div>
-<h1 class="eid">Eid Mubarak 🌙</h1>
-<p>Send me Eid Salami 😄</p>
+<div id="moon"></div>
+<h1>Eid Mubarak 🌙</h1>
+<p class="subtitle">Make me rich with your Eid Salami 😎💸</p>
 
-<!-- bKash -->
+<!-- Hidden numbers -->
+<div style="display:none;">
+  <span id="number1">01786820342</span>
+  <span id="number2">01786820342</span>
+  <span id="number3">01786820342</span>
+  <span id="number4">01786820342</span>
+</div>
+
+<!-- Copy buttons -->
 <div class="card">
-<img src="https://seeklogo.com/images/B/bkash-logo-835C41C0F2-seeklogo.com.png">
-<div class="number">01786820342</div>
-<button onclick="copyNumber('01786820342')">Copy Number</button>
-<br>
-<img class="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=01786820342">
+  <div class="method-name">bKash</div>
+  <button onclick="copyNumber('number1')">Copy Number</button>
 </div>
 
-<!-- Nagad -->
 <div class="card">
-<img src="https://seeklogo.com/images/N/nagad-logo-6A1E0D58F4-seeklogo.com.png">
-<div class="number">01786820342</div>
-<button onclick="copyNumber('01786820342')">Copy Number</button>
-<br>
-<img class="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=01786820342">
+  <div class="method-name">Nagad</div>
+  <button onclick="copyNumber('number2')">Copy Number</button>
 </div>
 
-<!-- Rocket -->
 <div class="card">
-<img src="https://seeklogo.com/images/R/rocket-dutch-bangla-bank-logo-0E7E0E5C9B-seeklogo.com.png">
-<div class="number">01786820342</div>
-<button onclick="copyNumber('01786820342')">Copy Number</button>
-<br>
-<img class="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=01786820342">
+  <div class="method-name">Rocket</div>
+  <button onclick="copyNumber('number3')">Copy Number</button>
 </div>
 
-<!-- Upay -->
 <div class="card">
-<img src="https://seeklogo.com/images/U/upay-logo-0C63D2A3A2-seeklogo.com.png">
-<div class="number">01786820342</div>
-<button onclick="copyNumber('01786820342')">Copy Number</button>
-<br>
-<img class="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=01786820342">
+  <div class="method-name">Upay</div>
+  <button onclick="copyNumber('number4')">Copy Number</button>
 </div>
 
-<div class="footer">
-Made with ❤️ for Eid
-</div>
+<canvas id="fireworks"></canvas>
+<div id="dancer">🕺</div>
 
-<!-- Confetti / Fireworks -->
-<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 <script>
-function startFireworks(){
-  confetti({
-    particleCount: 200,
-    spread: 120,
-    origin: { y: 0.6 }
+function copyNumber(id) {
+  const number = document.getElementById(id).innerText;
+  navigator.clipboard.writeText(number).then(() => {
+    alert("Number copied! 💰💵 Fireworks incoming!");
+    triggerFireworks();
+    createSparkles();
+    triggerCoins();
+    const dancer = document.getElementById('dancer');
+    dancer.style.animation = 'dance 0.3s infinite alternate';
+    setTimeout(()=> dancer.style.animation='dance 1s infinite alternate',1000);
   });
 }
 
-// Fireworks on page load
-window.onload = startFireworks;
-
-// Copy number + fireworks
-function copyNumber(number){
-  navigator.clipboard.writeText(number);
-  alert(number + " copied! Send your Eid Salami 😄");
-  confetti({
-    particleCount: 150,
-    spread: 100,
-    origin: { y: 0.5 }
-  });
+// Coins/cash animation
+function triggerCoins() {
+  const emojis = ['💰','💵','🪙','💎'];
+  for(let i=0;i<20;i++){
+    const coin=document.createElement('div');
+    coin.className='coin';
+    coin.innerText=emojis[Math.floor(Math.random()*emojis.length)];
+    coin.style.left=Math.random()*(window.innerWidth-30)+'px';
+    coin.style.top='0px'; // start from top
+    coin.style.fontSize=(16+Math.random()*24)+'px';
+    document.body.appendChild(coin);
+    setTimeout(()=>coin.remove(),1000);
+  }
 }
+
+// Sparkles effect
+function createSparkles(){
+  for(let i=0;i<10;i++){
+    const s=document.createElement('div');
+    s.className='sparkle';
+    s.style.left=Math.random()*window.innerWidth+'px';
+    s.style.top=Math.random()*window.innerHeight+'px';
+    document.body.appendChild(s);
+    setTimeout(()=>s.remove(),2000);
+  }
+}
+
+// Fireworks canvas
+const canvas=document.getElementById('fireworks');
+const ctx=canvas.getContext('2d');
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+let particles=[];
+function triggerFireworks(){
+  const x=Math.random()*canvas.width;
+  const y=Math.random()*canvas.height/2;
+  for(let i=0;i<30;i++){
+    particles.push({
+      x:x,
+      y:y,
+      vx:(Math.random()-0.5)*10,
+      vy:(Math.random()-0.5)*10,
+      alpha:1,
+      color:`hsl(${Math.random()*360},100%,50%)`
+    });
+  }
+}
+function animate(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  particles.forEach((p,i)=>{
+    p.x+=p.vx;
+    p.y+=p.vy;
+    p.alpha-=0.02;
+    ctx.fillStyle=`hsla(${Math.random()*360},100%,50%,${p.alpha})`;
+    ctx.beginPath();
+    ctx.arc(p.x,p.y,3,0,Math.PI*2);
+    ctx.fill();
+    if(p.alpha<=0) particles.splice(i,1);
+  });
+  requestAnimationFrame(animate);
+}
+animate();
 </script>
-
 </body>
 </html>
