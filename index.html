@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Eid Salami 🎉</title>
+<style>
+body{
+  background: linear-gradient(#020024,#090979,#000);
+  font-family: Arial;
+  text-align: center;
+  color: white;
+  padding: 20px;
+  overflow-x: hidden;
+}
+
+/* Crescent Moon */
+.moon{
+  width: 120px;
+  height: 120px;
+  background: #fff9c4;
+  border-radius: 50%;
+  position: relative;
+  margin: auto;
+  box-shadow: 0 0 40px #fff176;
+  animation: floatMoon 4s ease-in-out infinite;
+}
+
+.moon:after{
+  content: "";
+  width: 120px;
+  height: 120px;
+  background: #020024;
+  border-radius: 50%;
+  position: absolute;
+  left: 35px;
+  top: -10px;
+}
+
+@keyframes floatMoon{
+  0%{transform: translateY(0px);}
+  50%{transform: translateY(-15px);}
+  100%{transform: translateY(0px);}
+}
+
+/* Eid Mubarak */
+.eid{
+  font-size: 40px;
+  margin-top: 20px;
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow{
+  from{ color: #fff; }
+  to{ color: #ffd700; text-shadow: 0 0 20px gold; }
+}
+
+/* Cards */
+.card{
+  background: white;
+  color: black;
+  margin: 15px auto;
+  padding: 15px;
+  border-radius: 12px;
+  width: 220px;
+  font-size: 18px;
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.card img{
+  width: 60px;
+  margin-bottom: 8px;
+}
+
+.number{
+  margin: 8px 0;
+  font-weight: bold;
+}
+
+button{
+  padding: 6px 12px;
+  border: none;
+  background: #ff4444;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover{
+  background: #cc0000;
+}
+
+.qr{
+  width: 100px;
+  margin-top: 8px;
+}
+
+.footer{
+  margin-top: 30px;
+  font-size: 14px;
+  color: #ccc;
+}
+</style>
+
+</head>
+<body>
+
+<div class="moon"></div>
+<h1 class="eid">Eid Mubarak 🌙</h1>
+<p>Send me Eid Salami 😄</p>
+
+<!-- bKash -->
+<div class="card">
+<img src="https://seeklogo.com/images/B/bkash-logo-835C41C0F2-seeklogo.com.png">
+<div class="number">01786820342</div>
+<button onclick="copyNumber('01786820342')">Copy Number</button>
+<br>
+<img class="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=01786820342">
+</div>
+
+<!-- Nagad -->
+<div class="card">
+<img src="https://seeklogo.com/images/N/nagad-logo-6A1E0D58F4-seeklogo.com.png">
+<div class="number">01786820342</div>
+<button onclick="copyNumber('01786820342')">Copy Number</button>
+<br>
+<img class="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=01786820342">
+</div>
+
+<!-- Rocket -->
+<div class="card">
+<img src="https://seeklogo.com/images/R/rocket-dutch-bangla-bank-logo-0E7E0E5C9B-seeklogo.com.png">
+<div class="number">01786820342</div>
+<button onclick="copyNumber('01786820342')">Copy Number</button>
+<br>
+<img class="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=01786820342">
+</div>
+
+<!-- Upay -->
+<div class="card">
+<img src="https://seeklogo.com/images/U/upay-logo-0C63D2A3A2-seeklogo.com.png">
+<div class="number">01786820342</div>
+<button onclick="copyNumber('01786820342')">Copy Number</button>
+<br>
+<img class="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=01786820342">
+</div>
+
+<div class="footer">
+Made with ❤️ for Eid
+</div>
+
+<!-- Confetti / Fireworks -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<script>
+function startFireworks(){
+  confetti({
+    particleCount: 200,
+    spread: 120,
+    origin: { y: 0.6 }
+  });
+}
+
+// Fireworks on page load
+window.onload = startFireworks;
+
+// Copy number + fireworks
+function copyNumber(number){
+  navigator.clipboard.writeText(number);
+  alert(number + " copied! Send your Eid Salami 😄");
+  confetti({
+    particleCount: 150,
+    spread: 100,
+    origin: { y: 0.5 }
+  });
+}
+</script>
+
+</body>
+</html>
